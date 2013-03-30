@@ -1,0 +1,77 @@
+@prefix fresnel:  <http://www.w3.org/2004/09/fresnel#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix :         <#>.
+
+
+:dbpediaPersonLens rdf:type fresnel:Lens ;
+           fresnel:classLensDomain dbpedia-owl:Person;
+           fresnel:purpose fresnel:defaultLens ;
+           fresnel:group :foafGroup ;
+           fresnel:showProperties ( 
+	   			    dbpedia-owl:thumbnail
+	   			    dbpedia-owl:birthName 
+                                    dbpedia-owl:birthDate
+				    dbpedia-owl:deathDate
+                                    dbpedia-owl:nationality
+				    dbpedia-owl:religion
+				    dbpedia-owl:occupation
+				    dbpedia-owl:spouse
+				    dbpedia-owl:knownFor
+				    [ rdf:type fresnel:PropertyDescription ;
+				      fresnel:property dbpedia-owl:residence ;
+		    		      fresnel:use :residenceFormat ]
+				    owl:sameAs
+				    ).
+
+:foafPersonDefaultLens rdf:type fresnel:Lens ;
+                       fresnel:classLensDomain foaf:Person ;
+                       fresnel:group :foafGroup ;
+                       fresnel:showProperties ( foaf:name
+                                                foaf:surname
+                                                foaf:depiction ) .
+
+:knowsLens rdf:type fresnel:Lens ;
+           fresnel:classLensDomain foaf:Person ;
+           fresnel:group :foafGroup ;
+           fresnel:showProperties ( foaf:name
+                                    foaf:surname
+                                    foaf:mbox
+				    [ rdf:type fresnel:PropertyDescription ;
+				      fresnel:property foaf:knows;
+				      fresnel:use :mailFormat ] ).
+:nameLens rdf:type fresnel:Lens ;
+	fresnel:purpose fresnel:labelLens;
+	fresnel:classLensDomain foaf:Person ;
+	fresnel:showProperties foaf:name .
+
+# -----------------------------------------------
+# 2. Fresnel Formats
+# -----------------------------------------------
+
+
+:thumbnailFormat rdf:type fresnel:Format ;
+              fresnel:propertyFormatDomain dbpedia-owl:thumbnail ;
+              fresnel:label fresnel:none ;
+              fresnel:value fresnel:image ;
+              fresnel:valueStyle "imageWithThickBorder"^^fresnel:styleClass . 
+
+:nameFormat rdf:type fresnel:Format ;
+		fresnel:propertyFormatDomain dbpedia-owl:birthName ;
+		fresnel:label "Name"^^xsd:string .
+
+:residenceFormat rdf:type fresnel:Format ;
+		fresnel:propertyFormatDomain dbpedia-owl:residence ;
+		fresnel:label "Residence"^^xsd:string.
+
+:mailFormat rdf:type fresnel:Format ;
+		fresnel:propertyFormatDomain foaf:mbox ;
+		fresnel:value fresnel:externalLink .
+
+:sameAsFormat rdf:type fresnel:Format ;
+           fresnel:propertyFormatDomain owl:sameAs ;
+	   fresnel:label "Same As";
+           fresnel:value fresnel:externalLink .
