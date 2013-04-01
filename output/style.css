@@ -1,0 +1,51 @@
+.imageWithThickBorder img
+{
+	border-style:solid;
+	border-width:medium;
+}
+
+label
+{
+	float: left;
+	padding-right: 5px;
+}
+
+span
+{
+	display:block;
+}
+
+ul
+{
+	list-style-type: none;
+}
+
+table
+{
+	border: 1px;
+}
+
+#values
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+#value
+{
+	margin: auto;
+	display: block;
+}
+
+#property
+{
+	width: 100%;
+}
+
+
+#Resource
+{
+	width: 40%;
+	margin: auto;
+}
+

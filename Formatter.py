@@ -12,7 +12,7 @@ class Formatter:
 		self.fresnel = selector.fresnel
 		self.rdf_graph = selector.rdf_graph
 		self.result = selector.result
-		self.property_label = {}
+		self.property_label = {} # for caching data
 
 	def resolveFormat( self, property ):
 		
@@ -50,6 +50,15 @@ class Formatter:
 			else:
 				raise Exception("THIS SHOULDNT HAPPEN")
 	
+	def applyPropertyStyles( self, property, format ):
+		if format is None:
+			return
+		#TODO: check foaf:group for styles
+		property.label_style = self.fresnel.getLabelStyle( format )
+		property.value_style = self.fresnel.getValueStyle( format )
+		property.property_style = self.fresnel.getPropertyStyle( format )
+
+
 	def applySublensFormat( self, sublens , format):
 
 		#set only the label.
@@ -65,10 +74,10 @@ class Formatter:
 			label = self.resolvePropertyLabel( sublens.property )
 			sublens.setLabel(label)
 		print "s l", sublens.label
-		
+		self.applyPropertyStyles( sublens, format )
+
 	def applyPropertyFormat( self, property, format ):
 		property.setFormat( format )
-		
 		#get label - if fresnel:label is not specified then Resolve Label using the rdf_graph
 		label = self.fresnel.fresnel_graph.value(subject=format, predicate=fresnel_ns['label'] )
 
@@ -106,7 +115,8 @@ class Formatter:
 					string = self.resolveValueLabel( value )
 			print string
 			if string:
-				property.addValue( string )
+				property.addValue(string )
+		self.applyPropertyStyles( property, format )
 	
 	def resolvePropertyLabel( self, property ):
 		print "Resolving label for property ", property
@@ -146,8 +156,10 @@ class Formatter:
 			return label
 		#if is not BNode then try getting from outside source
 		if isinstance( resource, URIRef ):
+			print "downloading...", resource
 			new_graph = Graph()
 			new_graph.load(resource)
+			print "done"
 			#check if any labelLens match the resource
 			labelLens = self.fresnel.getLabelLens()
 			types = list( new_graph.objects( subject=resource, predicate=rdf_ns['type'] ) )

@@ -13,7 +13,8 @@
            fresnel:group :foafGroup ;
            fresnel:showProperties ( 
 	   			    dbpedia-owl:thumbnail
-	   			    dbpedia-owl:birthName 
+	   			    dbpedia-owl:abstract
+				    dbpedia-owl:birthName 
                                     dbpedia-owl:birthDate
 				    dbpedia-owl:deathDate
                                     dbpedia-owl:nationality
@@ -24,7 +25,7 @@
 				    [ rdf:type fresnel:PropertyDescription ;
 				      fresnel:property dbpedia-owl:residence ;
 		    		      fresnel:use :residenceFormat ]
-				    owl:sameAs
+				    dbpedia-owl:wikiPageExternalLink
 				    ).
 
 :foafPersonDefaultLens rdf:type fresnel:Lens ;
@@ -52,6 +53,9 @@
 # 2. Fresnel Formats
 # -----------------------------------------------
 
+:abstractFormat rdf:type fresnel:Format ;
+		fresnel:propertyFormatDomain dbpedia-owl:abstract ;
+		fresnel:label fresnel:none .
 
 :thumbnailFormat rdf:type fresnel:Format ;
               fresnel:propertyFormatDomain dbpedia-owl:thumbnail ;
@@ -72,6 +76,7 @@
 		fresnel:value fresnel:externalLink .
 
 :sameAsFormat rdf:type fresnel:Format ;
-           fresnel:propertyFormatDomain owl:sameAs ;
-	   fresnel:label "Same As";
+           fresnel:propertyFormatDomain  dbpedia-owl:wikiPageExternalLink ;
+	   fresnel:label "External Link";
            fresnel:value fresnel:externalLink .
+

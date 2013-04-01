@@ -78,6 +78,21 @@ class Fresnel:
 	def getLabelLens( self ):
 		return self.label_lens
 	
+	
+	def getLabelStyle( self, format ):
+		# style can be both class as well as instructions
+		styles = self.fresnel_graph.objects( subject=format, predicate=fresnel_ns['labelStyle'] )
+		return list( styles )
+	
+	def getPropertyStyle( self, format ):
+		
+		styles = self.fresnel_graph.objects( subject=format, predicate=fresnel_ns['propertyStyle'] )
+		return list( styles )
+
+	def getValueStyle( self, format ):
+		styles = self.fresnel_graph.objects( subject=format, predicate=fresnel_ns['valueStyle'] )
+		return list( styles )
+
 	def isDefaultLens( self, lens ):
 		s = self.fresnel_graph.value( subject = lens, predicate=fresnel_ns['purpose'] )
 		if s == fresnel_ns['defaultLens']:

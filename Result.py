@@ -1,6 +1,35 @@
 from Namespaces import *
 from rdflib import *
 
+
+
+def renderStyle( styles ):
+	if styles is None:
+		return " "
+	class_styles = []
+	instruction_styles = []
+	for style in styles:
+		if style.datatype == fresnel_ns['styleClass']:
+			class_styles.append( style )
+		if style.datatype == fresnel_ns['stylingInstructions']:
+			instruction_styles.append( style )
+	string = ""
+	if len(class_styles) > 0:
+		if len( class_styles ) == 1:
+			class_style = class_styles[0]
+			string +="class='"+class_style+"' "
+		else:
+			#TODO: resolve issue or get first style option?
+			class_style  = class_styles[0]
+			string +="class='"+class_style+"' "  
+		
+	if len( instruction_styles ) > 0:
+		string +=" style='"
+		for style in instruction_styles:
+			string += style
+		string +="' "
+	return string
+
 class Resource:
 
 	def __init__( self, uri, lens ):
@@ -24,6 +53,13 @@ class Resource:
 		string +="</div>\n"
 		return string
 
+	def renderTable( self ):
+		string = "<table id='resource'>\n"
+		for property in self.property_set:
+			string += property.renderTable()
+		string +="</table>\n"
+		return string
+
 class Property:
 
 	def __init__( self,  property, subject ):
@@ -31,6 +67,9 @@ class Property:
 		self.for_subject = subject
 		self.values = []
 		self.desc = None
+		self.label_style = None
+		self.property_style = None
+		self.value_style = None
 
 	def setFormat( self, format ):
 		self.format = format
@@ -43,17 +82,42 @@ class Property:
 	
 	def setPropertyDescription( self, desc ):
 		self.desc = desc
+	
+	def setLabelStyle( self, style ):
+		self.label_style = style
+	
+	def setPropertyStyle( self, style ):
+		self.property_style = style
+
+	def setValueStyle( self, style ):
+		self.value_style = style
 
 	def render( self , resource_uri):
+		string = ""
 		if len( self.values ) > 0 :
-			string = "<div id='property'>"
+			string = "<div id='property'" + renderStyle( self.property_style ) + ">\n"
 			if self.label:
-				string += "<div id='label'>" + str(self.label).title() + "</div>"
+				string += "<label "+ renderStyle( self.label_style ) + ">" + str(self.label).title() + "</label>"
+			string +="<span><ul id='values'>"
 			for value in self.values:
-				string += "<div id='value'>" + value + "</div>"
+				string += "<li id='value' "+ renderStyle( self.value_style ) +">" + value + "</li>\n"
+			string +="</ul></span>\n"
 			string += "</div>\n"
-		else:
-			string = "Property discarded " + self.property + "\n"
+		#else:
+		#	string = "Property discarded " + self.property + "\n"
+		return string
+
+	def renderTable( self ):
+		string = ""
+		if len( self.values ) > 0 :
+			string += "<tr " + renderStyle( self.property_style ) + ">\n"
+			if self.label:	
+				string += "<td "+ renderStyle( self.label_style ) + ">" + str(self.label).title() + "</td>"
+			string += "<td><ul>"
+			for value in self.values:
+				string += "<li "+ renderStyle( self.value_style ) +">" + value + "</li>\n"
+			string += "</ul</td>\n"
+			string += "</tr>\n"
 		return string
 
 class Sublens:
@@ -63,6 +127,9 @@ class Sublens:
 		self.superlens = superlens
 		self.sublens = sublens
 		self.lens_uri = lens_uri # A BNode which has type propertyDescription
+		self.label_style = None
+		self.property_style = None
+		self.value_style = None
 
 	def setSuperLens( self, lens ):
 		self.superlens = lens
@@ -122,12 +189,23 @@ class Sublens:
                                                 new_p = Property( property , new_resource )
 					new_resource.addProperty( new_p )
 			self.property_set.append( new_resource )
-
+		
 	def render( self, resource_uri ):
-		string = "<div id='sublens'>\n"
+		string = "<div id='sublens' " + renderStyle( self.property_style ) +">\n"
 		if self.label:
-			string += "<div label>" + self.label + "</div>\n"
+			string += "<div id='label' " + renderStyle( self.label_style ) +">" + self.label + "</div>\n"
+		string += "<div id='sublens_value' " + renderStyle( self.value_style ) +">\n" 
 		for resource in self.property_set:
 			string += resource.render( )
-		string += "</div>\n"
+		string += "</div>\n</div>\n"
+		return string
+
+	def renderTable( self ):
+		string = "<tr " + renderStyle( self.property_style ) + ">\n"
+		if self.label:
+			string += "<td "+ renderStyle( self.label_style ) +">" + self.label + "</td>\n"
+		string += "<td>\n"
+		for resource in self.property_set:
+			string += resource.render()
+		string += "</td>\n</tr>\n"
 		return string
