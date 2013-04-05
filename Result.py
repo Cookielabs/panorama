@@ -24,7 +24,7 @@ def renderStyle( styles ):
 			string +="class='"+class_style+"' "  
 		
 	if len( instruction_styles ) > 0:
-		string +=" style='"
+		string +="style='"
 		for style in instruction_styles:
 			string += style
 		string +="' "
@@ -36,20 +36,33 @@ class Resource:
 		self.uri = uri
 		self.lens = lens
 		self.property_set = []
-	
+		self.resource_styles = None
+
+		self.property_format = None
+
 	def setLens( self, lens ):
 		self.lens = lens
 
 	def setFormat( self, format ):
 		self.format = format
 	
+	def setResourceStyle( self, styles ):
+		self.resource_styles = styles 
+
 	def addProperty( self, property ):
 		self.property_set.append( property )
 	
 	def render( self ):
-		string ="<div id='Resource'>\n"
+		string ="<div id='resource' " + renderStyle( self.resource_styles ) +">\n"
 		for property in self.property_set:
-			string +=  property.render( self.uri )
+
+			if self.property_set.index( property ) == 0:
+				string += property.render( first=True, last=False )
+			elif self.property_set[-1] == property:
+				string +=  property.render( first=False, last=True )
+			else:
+				string += property.render( first=False, last=False )
+	
 		string +="</div>\n"
 		return string
 
@@ -67,9 +80,13 @@ class Property:
 		self.for_subject = subject
 		self.values = []
 		self.desc = None
+		
 		self.label_style = None
 		self.property_style = None
 		self.value_style = None
+
+		self.value_format = {}
+		self.property_format = {}
 
 	def setFormat( self, format ):
 		self.format = format
@@ -92,19 +109,42 @@ class Property:
 	def setValueStyle( self, style ):
 		self.value_style = style
 
-	def render( self , resource_uri):
+	def render( self , first, last):
 		string = ""
+		pf_content = self.property_format[ fresnel_ns['contentBefore'] ] if fresnel_ns['contentBefore'] in self.property_format else ""
+		if first:
+			if fresnel_ns['contentFirst'] in self.property_format:
+				pf_ciontent = self.property_format[ fresnel_ns['contentFirst'] ]
+		string += pf_content
+		
+		string += "<div id='property' " + renderStyle( self.property_style ) + ">\n"
+	
 		if len( self.values ) > 0 :
-			string = "<div id='property'" + renderStyle( self.property_style ) + ">\n"
 			if self.label:
-				string += "<label "+ renderStyle( self.label_style ) + ">" + str(self.label).title() + "</label>"
-			string +="<span><ul id='values'>"
+				string += "<label "+ renderStyle( self.label_style ) + ">" + str(self.label).title() + "</label>\n"
+			string +="<div id='value' " + renderStyle( self.value_style ) + ">"
 			for value in self.values:
-				string += "<li id='value' "+ renderStyle( self.value_style ) +">" + value + "</li>\n"
-			string +="</ul></span>\n"
-			string += "</div>\n"
-		#else:
-		#	string = "Property discarded " + self.property + "\n"
+				f_content = self.value_format[ fresnel_ns['contentBefore'] ] if fresnel_ns['contentBefore'] in self.value_format else ""
+				if self.values.index( value ) == 0:
+					if fresnel_ns['contentFirst'] in self.value_format:
+						f_content = self.value_format[ fresnel_ns['contentFirst'] ]
+				string += f_content
+				string += value
+				l_content = self.value_format[ fresnel_ns['contentAfter'] ] if fresnel_ns['contentAfter'] in self.value_format else ""
+				if self.values[-1] == value:
+					l_content = self.value_format[ fresnel_ns['contentLast'] ] if fresnel_ns['contentLast'] in self.value_format else l_content
+				string += l_content
+			string +="</div>\n"
+		else:
+			string += self.value_format[fresnel_ns['contentNoValue']] if fresnel_ns['contentNoValue'] in self.value_format else ""
+		string += "</div>\n"
+		
+		pl_content = self.property_format[ fresnel_ns['contentAfter'] ] if fresnel_ns['contentAfter'] in self.property_format else ""
+		if last:
+			if fresnel_ns['contentLast'] in self.property_format:
+				pl_content = self.property_format[ fresnel_ns['contentLast'] ]
+		string += pl_content
+		
 		return string
 
 	def renderTable( self ):

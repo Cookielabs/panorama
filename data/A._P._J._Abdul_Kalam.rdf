@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dbpedia-owl="http://dbpedia.org/ontology/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dbpprop="http://dbpedia.org/property/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:wdrs="http://www.w3.org/2007/05/powder-s#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ns9="http://www.w3.org/ns/prov#" >
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Bhairon_Singh_Shekhawat">
+    <dbpprop:president rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <dbpedia-owl:president rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yogesh_Kumar_Sabharwal">
+    <dbpprop:appointer rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <dbpedia-owl:appointer rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Indian_presidential_election,_2007">
+    <dbpprop:beforeElection rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Indian_Institute_of_Space_Science_and_Technology">
+    <dbpprop:chancellor rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <dbpedia-owl:chancellor rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Manmohan_Singh">
+    <dbpprop:president rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/A._P._J._Abdul_Kalam">
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/IndianScientists" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/IndianEngineers" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/PresidentsOfIndia" />
+    <rdf:type rdf:resource="http://dbpedia.org/ontology/Person" />
+    <rdf:type rdf:resource="http://umbel.org/umbel/rc/PersonWithOccupation" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/Officeholder110371450" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/LivingPeople" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/Person100007846" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/IndianSpaceResearchOrganisationPeople" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/IndianTamilPeople" />
+    <rdf:type rdf:resource="http://dbpedia.org/ontology/OfficeHolder" />
+    <rdf:type rdf:resource="http://dbpedia.org/ontology/Agent" />
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/IndianAerospaceEngineers" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/TamilNaduScientists" />
+    <rdf:type rdf:resource="http://schema.org/Person" />
+    <rdf:type rdf:resource="http://dbpedia.org/class/yago/TamilNaduPoliticians" />
+    <owl:sameAs rdf:resource="http://cs.dbpedia.org/resource/Abdul_Kalám" />
+    <owl:sameAs rdf:resource="http://pl.dbpedia.org/resource/A.P.J._Abdul_Kalam" />
+    <owl:sameAs rdf:resource="http://pt.dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <owl:sameAs rdf:resource="http://ru.dbpedia.org/resource/Калам,_Абдул" />
+    <owl:sameAs rdf:resource="http://sw.cyc.com/concept/Mx4rKbzeuNkMRMGVgCCOJAhQJQ" />
+    <owl:sameAs rdf:resource="http://fr.dbpedia.org/resource/Avul_Pakir_Jainulabdeen_Abdul_Kalam" />
+    <owl:sameAs rdf:resource="http://it.dbpedia.org/resource/Abdul_Kalam" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <owl:sameAs rdf:resource="http://de.dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <owl:sameAs rdf:resource="http://el.dbpedia.org/resource/Αμπντούλ_Καλάμ" />
+    <owl:sameAs rdf:resource="http://es.dbpedia.org/resource/Abdul_Kalam" />
+    <owl:sameAs rdf:resource="http://ja.dbpedia.org/resource/アブドゥル・カラーム" />
+    <owl:sameAs rdf:resource="http://rdf.freebase.com/ns/m.0gy3f" />
+    <rdfs:label xml:lang="ja">アブドゥル・カラーム</rdfs:label>
+    <rdfs:label xml:lang="it">Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="de">A. P. J. Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="uk">Абдул Калам</rdfs:label>
+    <rdfs:label xml:lang="es">Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="pl">A.P.J. Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="fi">A. P. J. Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="cs">Abdul Kalám</rdfs:label>
+    <rdfs:label xml:lang="fr">Avul Pakir Jainulabdeen Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="no">Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="ru">Калам, Абдул</rdfs:label>
+    <rdfs:label xml:lang="en">A. P. J. Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="zh">阿卜杜尔·卡拉姆</rdfs:label>
+    <rdfs:label xml:lang="nl">Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="sv">Abdul Kalam</rdfs:label>
+    <rdfs:label xml:lang="pt">A. P. J. Abdul Kalam</rdfs:label>
+    <rdfs:comment xml:lang="de">A. P. J. Abdul Kalam ist ein indischer Politiker. Kalam war vom 25. Juli 2002 bis zum 25. Juli 2007 Staatspräsident der Bundesrepublik Indien.</rdfs:comment>
+    <rdfs:comment xml:lang="es">Avul Pakir Jainulabdeen Abdul Kalam, nació el 15 de octubre de 1931, en Tamil Nadu, India, usualmente llamado Dr. A.  P.  J.  Abdul Kalam ^) es un ex-presidente de India. Científico e ingeniero destacado, es llamado el Hombre de los Misil por su trabajo en pro de la carrera armamentista y es considerado un líder progresista, mentor, innovador y visionario.</rdfs:comment>
+    <rdfs:comment xml:lang="nl">Dr. Avul Pakir Jainulabdeen Abdul Kalam is een voormalige president van India. Hij was president van 25 juli 2002 tot 25 juli 2007 en werd opgevolgd door Pratibha Patil. Hij is tevens een ruimtevaartdeskundige, ingenieur en auteur. Dr. Kalam behaalde zijn doctorstitel in de luchtvaarttechniek aan het Technologisch Instituut van Madras in 1958. Na het behalen van zijn academische graad werd hij lid van de Organisatie voor Onderzoek en Ontwikkeling van de Defensie van India.</rdfs:comment>
+    <rdfs:comment xml:lang="it">È stato l&#39;undicesimo Presidente dell&#39;India (il terzo di religione musulmana), esercitando tale incarico dal 2002 al 2007. A causa del suo stile di lavoro non convenzionale, è anche conosciuto popolarmente come il Presidente del Popolo. Prima del suo mandato come presidente indiano, si è distinto come ingegnere visionario e gli è stata assegnata la più alta onorificenza civile indiana, il Bharat Ratna nel 1997.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Avul Pakir Jainulabdeen Abdul Kalam (born 15 October 1931) usually referred to as A. P. J. Abdul Kalam, is an Indian politician and scientist who served as the 11th President of India. Apart from being a professor of aerospace engineering, he is also famous for his contribution to missile technology for India, pertaining to which he has been honoured Bharat Ratna award, India&#39;s highest civilian honour.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Avul Pakir Jainulabdeen (A.P.J. ) Abdul Kalam, né à Dhanushkodi (un village près de Rameswaram dans l&#39;État du Tamil Nadu) a été le 11 président de l&#39;Inde du 26 juillet 2002 au 24 juillet 2007. Il est connu aujourd&#39;hui comme l&#39;homme du missile indien (The Missile Man of India) et est le scientifique indien le plus honoré aujourd&#39;hui, car il dote en 1998 l&#39;Inde de la bombe atomique. Au-delà de ses aspects scientifiques et politiques, A.P.J.</rdfs:comment>
+    <rdfs:comment xml:lang="cs">Avul Pákir Zainulábidín Abdul Kalám (15. října 1931, Tamilnádu), přezdíván „Pan Raketa“, je atomový vědec a bývalý prezident Indie. Stál v čele organizace pro obranný vývoj a výzkum. Je leteckým inženýrem bez větších politických zkušeností, stál však u všech vědecko-technických mezníků v nejnovějších indických dějinách. Pochází z rodiny negramotného výrobce člunů z Tamilnádu. Zná poezii a indickou filozofii.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">} }} Авур Пакир Джаинулабдин Абдул Калам Марайкайяр (англ.  Avul Pakir Jainulabdeen Abdul Kalam Maraikkayar, там. அவுல் பகிர் ஜைனுலாப்தீன் அப்துல் கலாம், более известен как А.  П.  Дж. Абдул Калам; 15 октября 1931) — президент Индии с июля 2002 по июль 2007. Тамил по национальности, мусульманин по вероисповеданию. Родившийся 15 октября 1931 г.</rdfs:comment>
+    <rdfs:comment xml:lang="uk">Авур Пакір Джаїнулабдін Абдул Калам Марайкайяр (англ. Avul Pakir Jainulabdeen Abdul Kalam Maraikkayar, там. அவுல் பகிர் ஜைனுலாப்தீன் அப்துல் கலாம், більш відомий як А. П. Дж. Абдул Калам; 15 жовтня 1931) — 11-й президент Індії який очолював країну з 25 липня 2002 по 25 липня 2007. Був дуже популярним серед населення, за що його прозвали «Народний президент».</rdfs:comment>
+    <rdfs:comment xml:lang="zh">阿卜杜尔·卡拉姆（英語：Avul Pakir Jainulabdeen Abdul Kalam Maraikkayar，印地语：अवुल पकिर जैनुलाअबदीन अब्दुल कलाम，泰米爾語：அவுல் பகிர் ஜைனுலாப்தீன் அப்துல் கலாம்，1931年10月15日－），被譽為印度“导弹之父”，第11任印度共和国总统。</rdfs:comment>
+    <rdfs:comment xml:lang="ja">エー・ピー・ジェー （アヴール・パキール・ジャイヌラーブディーン）・アブドゥル・カラーム（1931年10月15日 - ）は、インドの政治家、科学者、技術者。第11代インド大統領。タミル人。 ※各言語での名前の表記は以下の通り。 英語：A.P.J. （Avul Pakir Jainulabdeen） Abdul Kalam タミル語：ஏ. பி. ஜே. (அவுல் பகிர் ஜைனுலாப்தீன்) அப்துல் கலாம ヒンディー語：अवूल पकीर जैनुलआब्दीन अब्दुल कलाम アラビア語：ابو الفقير زين العابدين عبد الکلام</rdfs:comment>
+    <rdfs:comment xml:lang="pt">Avul Pakir Jainulabdeen Abdul Kalam, nascido em 15 de outubro de 1931 em Rameshwaram, Índia, geralmente conhecido como Dr. APJ Abdul Kalam, foi o 11 º presidente da Índia, servindo 2002-2007, foi eleito durante o mandato da Aliança Democrática Nacional governo de coalizão, sob o primeiro-ministro Atal Bihari Vajpayee.</rdfs:comment>
+    <rdfs:comment xml:lang="no">Avul Pakir Jainulabdeen Abdul Kalam er en indisk ingeniør og politiker. Han var landets president fra 2002 til 2007. Kalam er muslim og er utdannet innen luft- og romfart, hvor han gjennom årene har hatt en rekke ledende stillinger. Kalam regnes for å ha bidratt i vesentlig grad til at India ble en kjernefysisk supermakt. Kalam regnes som en av Indias mest fremragende vitenskapsmenn. Gjennom årene har han mottatt en rekke æresbevisninger.</rdfs:comment>
+    <rdfs:comment xml:lang="sv">Dr Avul Pakir Jainulabdeen (A.P.J. ) Abdul Kalam, född 15 oktober 1931 i Dhanushkodi, Tamil Nadu, i en muslimsk familj, är en indisk luftfartsingenjör och politiker. Han var Indiens president från 18 juli 2002 till 25 juli 2007, då han efterträddes av Pratibha Patil. Han var tidigare ansvarig för det indiska kärnvapenprogrammet. Kalam är en renlevnadsman som iakttar såväl vegetarianism, absolutism som celibat.</rdfs:comment>
+    <rdfs:comment xml:lang="pl">Avul Pakir Jainulabdeen Abdul Kalam - prezydent Indii w latach 2002-2007, inżynier i naukowiec.</rdfs:comment>
+    <rdfs:comment xml:lang="fi">Avul Pakir Jainulabdeen Abdul Kalam yleensä käytetään muodossa A. P. J. Abdul Kalam oli Intian 11. presidentti. Hänet valittiin presidentiksi suurella ääntenenemmistöllä 18. heinäkuuta 2002. Hänen virkakautensa kesti 25. heinäkuuta 2002 – 25. heinäkuuta 2007. Seuraajaksi valittiin Pratibha Patil. A. P. J. Kalam on myös merkittävä tiedemies ja insinööri. Hän toimi Intian ensimmäisen kantoraketin SLV-3:n kehittäneessä ryhmässä projektijohtajana.</rdfs:comment>
+    <dbpedia-owl:birthPlace rdf:resource="http://dbpedia.org/resource/Rameswaram" />
+    <dbpedia-owl:birthPlace rdf:resource="http://dbpedia.org/resource/India" />
+    <dbpedia-owl:birthPlace rdf:resource="http://dbpedia.org/resource/Tamil_Nadu" />
+    <dbpedia-owl:birthPlace rdf:resource="http://dbpedia.org/resource/Presidencies_and_provinces_of_British_India" />
+    <dbpedia-owl:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1931-10-15</dbpedia-owl:birthDate>
+    <foaf:givenName xml:lang="en">A. P. J. Abdul</foaf:givenName>
+    <dbpedia-owl:wikiPageExternalLink rdf:resource="http://www.abdulkalam.com" />
+    <dbpedia-owl:wikiPageExternalLink rdf:resource="http://www.ft.lk/2012/01/21/the-peoples-president-dr-abdul-kalaam-in-sri-lanka/" />
+    <dbpedia-owl:wikiPageExternalLink rdf:resource="http://www.abdulkalam.nic.in/" />
+    <dbpedia-owl:wikiPageExternalLink rdf:resource="http://www.abdulkalam.nic.in/profile.html" />
+    <foaf:depiction rdf:resource="http://upload.wikimedia.org/wikipedia/commons/1/1c/AbdulKalam.JPG" />
+    <foaf:name xml:lang="en">Avul Pakir Jainulabdeen Abdul Kalam</foaf:name>
+    <foaf:name xml:lang="en">A. P. J. Abdul Kalam</foaf:name>
+    <dbpprop:birthPlace xml:lang="en">Rameswaram, British India</dbpprop:birthPlace>
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Defence_Research_and_Development_Organisation" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Tamil_poets" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Recipients_of_the_Bharat_Ratna" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Presidents_of_India" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Recipients_of_the_Padma_Bhushan" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Indian_scientists" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Tamil_Nadu_politicians" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Indian_Sunni_Muslims" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Tamil_engineers" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Madras_Institute_of_Technology_alumni" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Indian_Space_Research_Organisation_people" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Recipients_of_the_Padma_Vibhushan" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Indian_Muslims" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Living_people" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:People_from_Ramanathapuram_district" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Indian_Tamil_people" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:1931_births" />
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Category:Indian_aerospace_engineers" />
+    <foaf:homepage rdf:resource="http://www.abdulkalam.com" />
+    <wdrs:describedby rdf:resource="http://dbpedia.org/page/A._P._J._Abdul_Kalam" />
+    <wdrs:describedby rdf:resource="http://dbpedia.org/data/A._P._J._Abdul_Kalam.xml" />
+    <wdrs:describedby rdf:resource="http://dbpedia.org/data/A._P._J._Abdul_Kalam.json" />
+    <wdrs:describedby rdf:resource="http://dbpedia.org/data/A._P._J._Abdul_Kalam.ttl" />
+    <wdrs:describedby rdf:resource="http://dbpedia.org/data/A._P._J._Abdul_Kalam.jrdf" />
+    <wdrs:describedby rdf:resource="http://dbpedia.org/data/A._P._J._Abdul_Kalam.jsod" />
+    <wdrs:describedby rdf:resource="http://dbpedia.org/data/A._P._J._Abdul_Kalam.atom" />
+    <wdrs:describedby rdf:resource="http://dbpedia.org/data/A._P._J._Abdul_Kalam.n3" />
+    <wdrs:describedby rdf:resource="http://dbpedia.org/data/A._P._J._Abdul_Kalam.nt" />
+    <dbpprop:name xml:lang="en">Kalam, A. P. J. Abdul</dbpprop:name>
+    <dbpprop:name xml:lang="en">Avul Pakir Jainulabdeen Abdul Kalam</dbpprop:name>
+    <dc:description xml:lang="en">President of India, aerospace engineer</dc:description>
+    <dbpprop:sign xml:lang="en">Kalam post the announcement of his candidature by the then Prime Minister Atal Bihari Vajpayee</dbpprop:sign>
+    <dbpprop:sign xml:lang="en">A quote from Kalam&#39;s autobiography</dbpprop:sign>
+    <dbpprop:text xml:lang="en">&quot;I inherited honesty and self-discipline from my father; from my mother, I inherited faith in goodness and deep kindness as did my three brothers and sisters.&quot;</dbpprop:text>
+    <dbpprop:text xml:lang="en">I am really overwhelmed. Everywhere both in Internet and in other media, I have been asked for a message. I was thinking what message I can give to the people of the country at this juncture.</dbpprop:text>
+    <dbpprop:caption xml:lang="en">Abdul Kalam at the 12th Wharton India Economic Forum, 2008</dbpprop:caption>
+    <dbpprop:dateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</dbpprop:dateOfBirth>
+    <dbpprop:vicepresident rdf:resource="http://dbpedia.org/resource/Bhairon_Singh_Shekhawat" />
+    <dbpprop:termEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</dbpprop:termEnd>
+    <dbpprop:predecessor rdf:resource="http://dbpedia.org/resource/K._R._Narayanan" />
+    <dbpedia-owl:abstract xml:lang="pt">Avul Pakir Jainulabdeen Abdul Kalam, nascido em 15 de outubro de 1931 em Rameshwaram, Índia, geralmente conhecido como Dr. APJ Abdul Kalam, foi o 11 º presidente da Índia, servindo 2002-2007, foi eleito durante o mandato da Aliança Democrática Nacional governo de coalizão, sob o primeiro-ministro Atal Bihari Vajpayee.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="uk">Авур Пакір Джаїнулабдін Абдул Калам Марайкайяр (англ. Avul Pakir Jainulabdeen Abdul Kalam Maraikkayar, там. அவுல் பகிர் ஜைனுலாப்தீன் அப்துல் கலாம், більш відомий як А. П. Дж. Абдул Калам; 15 жовтня 1931) — 11-й президент Індії який очолював країну з 25 липня 2002 по 25 липня 2007. Був дуже популярним серед населення, за що його прозвали «Народний президент».</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="de">A. P. J. Abdul Kalam ist ein indischer Politiker. Kalam war vom 25. Juli 2002 bis zum 25. Juli 2007 Staatspräsident der Bundesrepublik Indien.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="fr">Avul Pakir Jainulabdeen (A.P.J. ) Abdul Kalam, né à Dhanushkodi (un village près de Rameswaram dans l&#39;État du Tamil Nadu) a été le 11 président de l&#39;Inde du 26 juillet 2002 au 24 juillet 2007. Il est connu aujourd&#39;hui comme l&#39;homme du missile indien (The Missile Man of India) et est le scientifique indien le plus honoré aujourd&#39;hui, car il dote en 1998 l&#39;Inde de la bombe atomique. Au-delà de ses aspects scientifiques et politiques, A.P.J. Abdul Kalam est reconnu comme un sage et un grand humaniste, au grand cœur, très intéressé par la spiritualité et la philosophie de son pays. Il utilise également beaucoup de poèmes du Tamil Nadu, les kurals, lors de ses discours et a donné ses 10 premiers mois de salaire de président à l&#39;ONG humanitaire crée par la sainte indienne Mata Amritanandamayi. Il a écrit plusieurs ouvrages dont une autobiographie, Les ailes de feu, dans lesquels il encourage la jeunesse de son pays à faire en sorte que l&#39;Inde devienne une superpuissance à l&#39;horizon 2020.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="es">Avul Pakir Jainulabdeen Abdul Kalam, nació el 15 de octubre de 1931, en Tamil Nadu, India, usualmente llamado Dr. A.  P.  J.  Abdul Kalam ^) es un ex-presidente de India. Científico e ingeniero destacado, es llamado el Hombre de los Misil por su trabajo en pro de la carrera armamentista y es considerado un líder progresista, mentor, innovador y visionario.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="no">Avul Pakir Jainulabdeen Abdul Kalam er en indisk ingeniør og politiker. Han var landets president fra 2002 til 2007. Kalam er muslim og er utdannet innen luft- og romfart, hvor han gjennom årene har hatt en rekke ledende stillinger. Kalam regnes for å ha bidratt i vesentlig grad til at India ble en kjernefysisk supermakt. Kalam regnes som en av Indias mest fremragende vitenskapsmenn. Gjennom årene har han mottatt en rekke æresbevisninger. Han nyter dessuten hele 30 æresdoktorater fra forskjellige universiteter og institusjoner, og har utgitt flere bøker.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="ru">} }} Авур Пакир Джаинулабдин Абдул Калам Марайкайяр (англ. &amp;#160;Avul Pakir Jainulabdeen Abdul Kalam Maraikkayar, там. அவுல் பகிர் ஜைனுலாப்தீன் அப்துல் கலாம், более известен как А.  П.  Дж. Абдул Калам; 15 октября 1931) — президент Индии с июля 2002 по июль 2007. Тамил по национальности, мусульманин по вероисповеданию. Родившийся 15 октября 1931 г. в городке Рамешварам на юге штата Тамилнад в семье бедного рыбака, Абдул Калам с детства отличался не только завидным упорством в получении знаний в школе, но и огромным трудолюбием и ответственностью, помогая своей семье продажей газет в свободное от школы время. В 1950 г. он поступил в колледж Сент Джозеф в г. Тричи, а в 1954 г.  — в Мадрасский технологический институт, где получил диплом авиаинженера. С 1958 г. работал в Организации оборонных исследований, в 1963 г. перешел в Индийскую организацию космических исследований. А. Калам внес значительный вклад в развитие спутниковой и ракетной программ Индии. В частности, руководил проектом по разработке первой индийской ракеты-носителя СЛВ-3 для вывода на околоземную орбиту спутника «Рохини». 18 июля 1980 г. под его руководством запущен первый индийский спутник СЛВ-3. С 1992 по 1999 год Калам был советником по науке министра обороны и руководителем Департамента оборонных исследований. Он автор знаменитого технологического плана-2002 по превращению Индии из развивающейся страны в развитую. Перед президентством занимал пост главного советника правительства Индии в ранге министра, ответственного за научно-техническое развитие в стратегической, экономической и социальной областях. Один из инициаторов создания совместного российско-индийского предприятия «Брамос» по производству крылатых ракет. Известен стратегическим видением развития Индии и ее места в мире. В своей книге «Индия-2020» предлагает программу превращения страны в технологическую сверхдержаву.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="fi">Avul Pakir Jainulabdeen Abdul Kalam yleensä käytetään muodossa A. P. J. Abdul Kalam oli Intian 11. presidentti. Hänet valittiin presidentiksi suurella ääntenenemmistöllä 18. heinäkuuta 2002. Hänen virkakautensa kesti 25. heinäkuuta 2002 – 25. heinäkuuta 2007. Seuraajaksi valittiin Pratibha Patil. A. P. J. Kalam on myös merkittävä tiedemies ja insinööri. Hän toimi Intian ensimmäisen kantoraketin SLV-3:n kehittäneessä ryhmässä projektijohtajana. Tämän jälkeen hän oli 1980-luvun alussa Intian ohjussuunnitteluprojektien johtajana puolustusvoimien tutkimuslaitos DRDO:ssa ja vuodesta 1992 puolustusministerin tieteellisenä neuvonantajana ollen mukana Intian ydinaseiden kehitystyössä. Kalam johti Agni- ja Prithvi-ohjusten kehittelyä ja hänet tunnetaan siksi Intian ohjusmiehenä. Kalam haaveilee muutenkin suuresta, vauraasta Intiasta ja kehottaa nuoria uneksimaan ja toteuttamaan unelmansa. Kalamin mielestä tärkeitä alueita joilla Intia voi kehittyä ovat ohjelmistosuunnittelu, tietokonetuotteet ja niiden suunnittelu, maanviljely ja ruoka, ilmailu, puolustustutkimus, avaruusteknologia ja kemiantutkimus. Kalam on avoimen lähdekoodin ohjelmistojen tukija. Kalamia on joskus arvosteltu suurista unelmista ja vähistä teoista. Myöskään kaikki hänen ohjaamansa sotilasprojektit eivät ole olleet menestyksellisiä. Iäkäs, monta kieltä osaava, syvästi uskonnollinen Kalam harrastaa muun muassa veenan soittoa ja runoutta. Hän on selibaatissa elävä kasvissyöjä ja absolutisti. Etniseltä taustaltaan Kalam on tamili. Luultavasti Kalam lukee sekä islamilaisten koraania sekä hindujen Bhagavad Gitaa. Häntä voidaan siksi pitää sopivana valintana uskonnollisten ristiriitojen repimään Intiaan.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="en">Avul Pakir Jainulabdeen Abdul Kalam (born 15 October 1931) usually referred to as A. P. J. Abdul Kalam, is an Indian politician and scientist who served as the 11th President of India. Apart from being a professor of aerospace engineering, he is also famous for his contribution to missile technology for India, pertaining to which he has been honoured Bharat Ratna award, India&#39;s highest civilian honour. He was born and brought up at Rameswaram in Tamil Nadu, being born in a poor family he had to work his way through average grades and financial hard ships, completing his studies in aerospace engineering at Madras Institute of Technology (MIT – Chennai). He joined Aeronautical Development Establishment of Defence Research and Development Organisation (DRDO), India and is known for his many contributions to Aeronautical and Missile technology of India. A. P. J. Abdul Kalam was elected president of India in 2002, defeating Lakshmi Sahgal, and was supported by both National Democratic Alliance (NDA) and BJP, then major political party of India. After serving office as a president till 2007 he is now a visiting professor at Indian Institute of Management, Ahmedabad and Indian Institute of Management, Indore; Chancellor of Indian Institute of Space Science and Technology Thiruvananthapuram, a professor of Aerospace Engineering at Anna University (Chennai), JSS University (Mysore), and an adjunct/visiting faculty at many other academic and research institutions across India and is involved in philanthropic work as on 2012 .</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="sv">Dr Avul Pakir Jainulabdeen (A.P.J. ) Abdul Kalam, född 15 oktober 1931 i Dhanushkodi, Tamil Nadu, i en muslimsk familj, är en indisk luftfartsingenjör och politiker. Han var Indiens president från 18 juli 2002 till 25 juli 2007, då han efterträddes av Pratibha Patil. Han var tidigare ansvarig för det indiska kärnvapenprogrammet. Kalam är en renlevnadsman som iakttar såväl vegetarianism, absolutism som celibat.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="ja">エー・ピー・ジェー （アヴール・パキール・ジャイヌラーブディーン）・アブドゥル・カラーム（1931年10月15日 - ）は、インドの政治家、科学者、技術者。第11代インド大統領。タミル人。 ※各言語での名前の表記は以下の通り。 英語：A.P.J. （Avul Pakir Jainulabdeen） Abdul Kalam タミル語：ஏ. பி. ஜே. (அவுல் பகிர் ஜைனுலாப்தீன்) அப்துல் கலாம ヒンディー語：अवूल पकीर जैनुलआब्दीन अब्दुल कलाम アラビア語：ابو الفقير زين العابدين عبد الکلام</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="zh">阿卜杜尔·卡拉姆（英語：Avul Pakir Jainulabdeen Abdul Kalam Maraikkayar，印地语：अवुल पकिर जैनुलाअबदीन अब्दुल कलाम，泰米爾語：அவுல் பகிர் ஜைனுலாப்தீன் அப்துல் கலாம்，1931年10月15日－），被譽為印度“导弹之父”，第11任印度共和国总统。</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="cs">Avul Pákir Zainulábidín Abdul Kalám (15. října 1931, Tamilnádu), přezdíván „Pan Raketa“, je atomový vědec a bývalý prezident Indie. Stál v čele organizace pro obranný vývoj a výzkum. Je leteckým inženýrem bez větších politických zkušeností, stál však u všech vědecko-technických mezníků v nejnovějších indických dějinách. Pochází z rodiny negramotného výrobce člunů z Tamilnádu. Zná poezii a indickou filozofii. I když vyrostl v muslimské rodině, za muslima se neoznačuje a denně čte hinduistické texty. Kandidoval za vládní koalici a mezi 25. červencem 2002 až 25. červencem 2007 byl Prezident Indie.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="pl">Avul Pakir Jainulabdeen Abdul Kalam - prezydent Indii w latach 2002-2007, inżynier i naukowiec.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="it">È stato l&#39;undicesimo Presidente dell&#39;India (il terzo di religione musulmana), esercitando tale incarico dal 2002 al 2007. A causa del suo stile di lavoro non convenzionale, è anche conosciuto popolarmente come il Presidente del Popolo. Prima del suo mandato come presidente indiano, si è distinto come ingegnere visionario e gli è stata assegnata la più alta onorificenza civile indiana, il Bharat Ratna nel 1997.</dbpedia-owl:abstract>
+    <dbpedia-owl:abstract xml:lang="nl">Dr. Avul Pakir Jainulabdeen Abdul Kalam is een voormalige president van India. Hij was president van 25 juli 2002 tot 25 juli 2007 en werd opgevolgd door Pratibha Patil. Hij is tevens een ruimtevaartdeskundige, ingenieur en auteur. Dr. Kalam behaalde zijn doctorstitel in de luchtvaarttechniek aan het Technologisch Instituut van Madras in 1958. Na het behalen van zijn academische graad werd hij lid van de Organisatie voor Onderzoek en Ontwikkeling van de Defensie van India. Vier later jaar werd hij lid van het Indiase Onderzoeksorganisatie voor de Ruimtevaart, waar zijn team met succes verscheidene satellieten lanceerde. In 1982 keerde hij terug bij de DRDO en werd daar voorzitter. Hij concentreerde zich vooral op geleide raketten. In 1992 werd hij wetenschappelijk adviseur aan het Ministerie van Defensie van India. Op 11 mei 1998 leidde Kalam succesvolle ondergrondse de kernwapenproeven. Kalam is een praktiserend vegetariër en houdt zich aan het celibaat. Hij bestudeert zowel de koran (de belangrijkste heilige religieuze tekst binnen zijn islamitische familie) en Bhagavad gita (een belangrijke heilige tekst van de meerderheidsgodsdienst in India, hindoeïsme). Kalam heeft verscheidene toekenningen gekregen voor zijn wetenschappelijk werk, waaronder de hoogste burgerlijke toekenning van India, Bharat Ratna. Tevens heeft hij eredoctoraten ontvangen van bijna 30 universiteiten. Dr. Kalam heeft vier boeken geschreven: Vleugels van Vuur India 2020 – Een visie op het Nieuwe Millennium Mijn Reis Ontladen Gedachten – Het loslaten van de Macht binnen India.</dbpedia-owl:abstract>
+    <dbpedia-owl:individualisedPnd xml:lang="de">124468047</dbpedia-owl:individualisedPnd>
+    <dbpprop:shortDescription rdf:resource="http://dbpedia.org/resource/President_of_India" />
+    <dbpprop:shortDescription rdf:resource="http://dbpedia.org/resource/Aerospace_engineering" />
+    <dbpprop:placeOfBirth xml:lang="en">Rameshwaram, Tamil Nadu, India</dbpprop:placeOfBirth>
+    <dbpprop:office rdf:resource="http://dbpedia.org/resource/President_of_India" />
+    <dbpprop:religion rdf:resource="http://dbpedia.org/resource/Islam" />
+    <dbpprop:source xml:lang="en">A. P. J. Abdul Kalam</dbpprop:source>
+    <dbpprop:wikiPageUsesTemplate rdf:resource="http://dbpedia.org/resource/Template:Persondata" />
+    <dbpprop:wikiPageUsesTemplate rdf:resource="http://dbpedia.org/resource/Template:Infobox_officeholder" />
+    <dbpprop:wikiPageUsesTemplate rdf:resource="http://dbpedia.org/resource/Template:Quote_box" />
+    <dbpprop:wikiPageUsesTemplate rdf:resource="http://dbpedia.org/resource/Template:Quote" />
+    <dbpprop:wikiPageUsesTemplate rdf:resource="http://dbpedia.org/resource/Template:Authority_control" />
+    <dbpprop:pnd rdf:datatype="http://www.w3.org/2001/XMLSchema#int">124468047</dbpprop:pnd>
+    <dbpprop:lccn xml:lang="en">n/98/925888</dbpprop:lccn>
+    <dbpprop:viaf rdf:datatype="http://www.w3.org/2001/XMLSchema#int">49404258</dbpprop:viaf>
+    <dbpedia-owl:thumbnail rdf:resource="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/AbdulKalam.JPG/200px-AbdulKalam.JPG" />
+    <dbpprop:salign xml:lang="en">right</dbpprop:salign>
+    <dbpprop:quoted xml:lang="en">true</dbpprop:quoted>
+    <dbpprop:primeminister rdf:resource="http://dbpedia.org/resource/Manmohan_Singh" />
+    <dbpprop:primeminister rdf:resource="http://dbpedia.org/resource/Atal_Bihari_Vajpayee" />
+    <dbpprop:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1931-10-15</dbpprop:birthDate>
+    <dbpprop:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int">280</dbpprop:width>
+    <dbpprop:align xml:lang="en">right</dbpprop:align>
+    <dbpprop:termStart rdf:datatype="http://www.w3.org/2001/XMLSchema#int">26</dbpprop:termStart>
+    <dbpprop:successor rdf:resource="http://dbpedia.org/resource/Pratibha_Patil" />
+    <dbpprop:party rdf:resource="http://dbpedia.org/resource/Independent_(politician)" />
+    <dbpprop:profession xml:lang="en">Professor, Author, scientistAerospace engineer</dbpprop:profession>
+    <dbpprop:almaMater rdf:resource="http://dbpedia.org/resource/Madras_Institute_of_Technology" />
+    <dbpprop:almaMater rdf:resource="http://dbpedia.org/resource/St._Joseph&#39;s_College,_Tiruchirappalli" />
+    <dbpprop:quote xml:lang="en">This was my first stage, in which I learnt leadership from three great teachers—Dr. Vikram Sarabhai, Prof. Satish Dhawan and Dr. Brahm Prakash. This was the time of learning and acquisition of knowledge for me.</dbpprop:quote>
+    <dbpedia-owl:party rdf:resource="http://dbpedia.org/resource/Independent_(politician)" />
+    <dbpedia-owl:vicePresident rdf:resource="http://dbpedia.org/resource/Bhairon_Singh_Shekhawat" />
+    <dbpedia-owl:activeYearsStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2002-07-26</dbpedia-owl:activeYearsStartDate>
+    <dbpedia-owl:successor rdf:resource="http://dbpedia.org/resource/Pratibha_Patil" />
+    <dbpedia-owl:orderInOffice xml:lang="en">President of India</dbpedia-owl:orderInOffice>
+    <dbpedia-owl:almaMater rdf:resource="http://dbpedia.org/resource/Madras_Institute_of_Technology" />
+    <dbpedia-owl:almaMater rdf:resource="http://dbpedia.org/resource/St._Joseph&#39;s_College,_Tiruchirappalli" />
+    <dbpedia-owl:profession rdf:resource="http://dbpedia.org/resource/Scientist" />
+    <dbpedia-owl:profession rdf:resource="http://dbpedia.org/resource/Aerospace_engineering" />
+    <dbpedia-owl:profession rdf:resource="http://dbpedia.org/resource/Author" />
+    <dbpedia-owl:religion rdf:resource="http://dbpedia.org/resource/Islam" />
+    <dbpedia-owl:activeYearsEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-07-24</dbpedia-owl:activeYearsEndDate>
+    <dbpedia-owl:primeMinister rdf:resource="http://dbpedia.org/resource/Manmohan_Singh" />
+    <dbpedia-owl:primeMinister rdf:resource="http://dbpedia.org/resource/Atal_Bihari_Vajpayee" />
+    <ns9:wasDerivedFrom rdf:resource="http://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam?oldid=495119531" />
+    <foaf:surname xml:lang="en">Kalam</foaf:surname>
+    <dbpprop:hasPhotoCollection rdf:resource="http://www4.wiwiss.fu-berlin.de/flickrwrappr/photos/A._P._J._Abdul_Kalam" />
+    <foaf:isPrimaryTopicOf rdf:resource="http://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Atal_Bihari_Vajpayee">
+    <dbpprop:president rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/K._R._Narayanan">
+    <dbpprop:successor rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <dbpedia-owl:successor rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Wings_of_Fire">
+    <dbpedia-owl:author rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/H_K_Firodia_awards">
+    <dbpprop:firstawardees rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Pratibha_Patil">
+    <dbpprop:predecessor rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Kalam_(disambiguation)">
+    <dbpedia-owl:wikiPageDisambiguates rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/K._G._Balakrishnan">
+    <dbpprop:appointer rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <dbpedia-owl:appointer rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/S.B._Sinha">
+    <dbpprop:appointer rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <dbpedia-owl:appointer rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Indian_presidential_election,_2002">
+    <dbpprop:nominee rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+    <dbpprop:afterElection rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/2003_Afro-Asian_Games">
+    <dbpprop:officiallyClosedBy rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Target_3_Billion">
+    <dbpedia-owl:author rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/APJ_Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Avul_Pakir_Jainulabdeen_Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/A_P_J_Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/APJ_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/A._P._J._Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/A_P_J_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/A.P.J_Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Abdul_kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/%E0%AE%85%E0%AE%B5%E0%AF%81%E0%AE%B2%E0%AF%8D_%E0%AE%AA%E0%AE%95%E0%AF%80%E0%AE%B0%E0%AF%8D_%E0%AE%9C%E0%AF%88%E0%AE%A9%E0%AF%81%E0%AE%B2%E0%AE%BE%E0%AE%AA%E0%AF%8D%E0%AE%A4%E0%AF%80%E0%AE%A9%E0%AF%8D_%E0%AE%85%E0%AE%AA%E0%AF%8D%E0%AE%A4%E0%AF%81%E0%AE%B2%E0%AF%8D_%E0%AE%95%E0%AE%B2%E0%AE%BE%E0%AE%AE%E0%AF%8D">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/&#39;%D8%A7%D8%A8%D9%8F%D9%84_%D9%81%D8%A7%D8%AE%D8%B1_%D8%B2%DB%8C%D9%86%D9%84_%D8%B9%D8%A7%D8%A8%D8%AF%DB%8C%D9%86_%D8%B9%D8%A8%D8%AF%D9%84_%DA%A9%D9%84%D8%A7%D9%85">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/A,P.J._Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Dr._Avul_Pakir_Jainulabdeen_Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Dr._APJ_Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/A.P.J._Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Dr_A._P._J._Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/A.P.J.Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Eleventh_President_of_India">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Apjak">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Dr._A.P.J._Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam">
+    <foaf:primaryTopic rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Dr._A_P_J_Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Dr._Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Abdul_Kalaam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Dr._A.P.J_Abdul_Kalam">
+    <dbpedia-owl:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mpii.de/yago/resource/A._P._J._Abdul_Kalam">
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/A._P._J._Abdul_Kalam" />
+  </rdf:Description>
+</rdf:RDF>

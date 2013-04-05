@@ -1,6 +1,7 @@
 @prefix fresnel:  <http://www.w3.org/2004/09/fresnel#> .
 @prefix foaf:     <http://xmlns.com/foaf/0.1/> .
 @prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 @prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
 @prefix owl:      <http://www.w3.org/2002/07/owl#> .
@@ -13,7 +14,7 @@
            fresnel:group :foafGroup ;
            fresnel:showProperties ( 
 	   			    dbpedia-owl:thumbnail
-	   			    dbpedia-owl:abstract
+	   			    rdfs:comment
 				    dbpedia-owl:birthName 
                                     dbpedia-owl:birthDate
 				    dbpedia-owl:deathDate
@@ -54,14 +55,14 @@
 # -----------------------------------------------
 
 :abstractFormat rdf:type fresnel:Format ;
-		fresnel:propertyFormatDomain dbpedia-owl:abstract ;
+		fresnel:propertyFormatDomain rdfs:comment ;
 		fresnel:label fresnel:none .
 
 :thumbnailFormat rdf:type fresnel:Format ;
               fresnel:propertyFormatDomain dbpedia-owl:thumbnail ;
               fresnel:label fresnel:none ;
               fresnel:value fresnel:image ;
-              fresnel:valueStyle "imageWithThickBorder"^^fresnel:styleClass . 
+              fresnel:valueStyle "thumbnail"^^fresnel:styleClass . 
 
 :nameFormat rdf:type fresnel:Format ;
 		fresnel:propertyFormatDomain dbpedia-owl:birthName ;
@@ -77,6 +78,9 @@
 
 :sameAsFormat rdf:type fresnel:Format ;
            fresnel:propertyFormatDomain  dbpedia-owl:wikiPageExternalLink ;
-	   fresnel:label "External Link";
-           fresnel:value fresnel:externalLink .
+	   fresnel:label "External Link" ;
+           fresnel:value fresnel:externalLink ;
+	   fresnel:valueFormat [ fresnel:contentAfter ", "^^xsd:string ;
+	   			 fresnel:contentLast " "^^xsd:string ;
+				 ] .
 

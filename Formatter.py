@@ -25,6 +25,27 @@ class Formatter:
 					format = use
 					return format
 
+		if isinstance(property, Resource ):
+			resource = property.uri
+			instance_formats = self.fresnel.fresnel_graph.subjects( predicate = fresnel_ns['instanceFormatDomain'], object = resource )
+			matches = []
+			for format in instance_formats:
+				matches.append( format )
+
+			if len( matches ) > 0: # TODO:resolve conflict
+				return matches[0]
+			#TODO: What if resource not in rdf_graph
+			types = list( self.rdf_graph.objects( subject=resource, predicate=rdf_ns['type'] ) )
+			
+			#TODO: Can make it more efficient
+			for type in types:
+				formats = list( self.fresnel.fresnel_graph.subjects( predicate = fresnel_ns['classFormatDomain'], object = type ) )
+				for format in formats:
+					matches.append( format )
+			if len( matches ) > 0: #TODO: resolve confict
+				return matches[0]	
+			return None
+
 		#otherwise
 		formats = self.fresnel.getPropertyFormat( property.property )
                 if len( formats ) > 1:
@@ -35,8 +56,11 @@ class Formatter:
                         format = None
 		return format
 
+
 	def matchFormat( self , resource):
 
+		format_resource = self.resolveFormat( resource )
+		self.applyResourceFormat( resource , format_resource)
 		for property in resource.property_set:
 			if isinstance( property, Sublens ):
 				format = self.resolveFormat( property )
@@ -50,6 +74,23 @@ class Formatter:
 			else:
 				raise Exception("THIS SHOULDNT HAPPEN")
 	
+	def applyResourceStyles( self, resource, format ):
+
+		if format is None:
+			return
+		
+		resource_styles = list(self.fresnel.fresnel_graph.objects( subject=format, predicate=fresnel_ns['resourceStyle'] ) )
+
+		resource.setResourceStyle( resource_styles )
+
+	
+	def applyResourceFormat( self, resource, format ):
+
+		if format is None:
+			return
+
+		#TODO
+
 	def applyPropertyStyles( self, property, format ):
 		if format is None:
 			return
@@ -73,7 +114,6 @@ class Formatter:
 		else:
 			label = self.resolvePropertyLabel( sublens.property )
 			sublens.setLabel(label)
-		print "s l", sublens.label
 		self.applyPropertyStyles( sublens, format )
 
 	def applyPropertyFormat( self, property, format ):
@@ -93,7 +133,7 @@ class Formatter:
 		value_type = self.fresnel.fresnel_graph.value( subject=format, predicate=fresnel_ns['value'] )
 		values = self.rdf_graph.objects( subject=property.for_subject.uri, predicate=property.property )
 
-		print "Getting values..", property.property
+		print "Getting values for ", property.property, "..."
 		for value in values:
 			string = ""
 			if value_type is not None:
@@ -117,7 +157,20 @@ class Formatter:
 			if string:
 				property.addValue(string )
 		self.applyPropertyStyles( property, format )
-	
+
+		value_formats = self.fresnel.fresnel_graph.objects( subject=format, predicate=fresnel_ns['valueFormat'] )
+
+		for f in value_formats:
+			for p, o in self.fresnel.fresnel_graph.predicate_objects( subject=f ):
+				property.value_format[ p ] = o
+
+		property_formats = self.fresnel.fresnel_graph.objects( subject=format, predicate=fresnel_ns['propertyFormat'] )
+
+		for f in property_formats:
+			for p, o in self.fresnel.fresnel_graph.predicate_objects( subject=f ):
+				property.property_format[ p ] = o
+	 	
+
 	def resolvePropertyLabel( self, property ):
 		print "Resolving label for property ", property
 		if property in self.property_label:
@@ -135,7 +188,6 @@ class Formatter:
 		return None
 
 	def resolveValueLabel( self, resource ):
-		#TODO: support for labelLens in fresnel
 		if resource in self.selector.lens_for_resource:
 			label_lens = self.selector.lens_for_resource[resource].getLabelLens()
 			#TODO: resolve conflict for multiple label lens

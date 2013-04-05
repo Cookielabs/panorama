@@ -1,51 +1,36 @@
-.imageWithThickBorder img
+
+#resource
 {
-	border-style:solid;
-	border-width:medium;
+	width: 600px;
+	margin: 0 auto;
+	border-style: solid;
+	border-width: medium;
+	border-color: green;
+}
+
+#property
+{
+	width: 600px;
 }
 
 label
 {
 	float: left;
-	padding-right: 5px;
-}
-
-span
-{
-	display:block;
-}
-
-ul
-{
-	list-style-type: none;
-}
-
-table
-{
-	border: 1px;
-}
-
-#values
-{
-	margin: 0px;
-	padding: 0px;
+	color: red;
+	padding: 5px;
 }
 
 #value
 {
-	margin: auto;
 	display: block;
-}
-
-#property
-{
-	width: 100%;
+	padding: 5px;
+	color:black;
 }
 
 
-#Resource
+.thumbnail img
 {
-	width: 40%;
-	margin: auto;
+	max-width:200px;
+	max-height:200px;
 }
 
