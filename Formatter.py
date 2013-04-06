@@ -54,8 +54,8 @@ class Formatter:
 				p = property.property
 			elif property.alternate_property:
 				p = property.alternate_property[0]
-			elif property.merge_property:
-				p = property.merge_property[0]
+			elif property.merged_property:
+				p = property.merged_property[0]
 			else:
 				raise("This shouldnt happen")
 	
@@ -143,7 +143,14 @@ class Formatter:
 				print "for property ", property.property
 				label = self.resolvePropertyLabel( property.property )
 			else:
-				raise Exception("Oops! Now What?")
+				#TODO: What if the first property does not have label
+				if property.alternate_property:
+					p = property.alternate_property[0]
+				elif property.merged_property:
+					p = property.merged_property[0]
+				else:
+					raise Exception("Oops! Now What?")
+				label = self.resolvePropertyLabel( p )
 		property.setLabel(label)
 
 		self.getValues( property, format )
@@ -167,7 +174,7 @@ class Formatter:
 			self.getPropertyValues( property.property, format, property )
 		elif property.alternate_property:
 			self.alternateProperties( property, format )
-		elif property.merge_property:
+		elif property.merged_property:
 			self.mergeProperties( property, format )
 		else:
 			raise Exception("Property not found..")
@@ -214,10 +221,10 @@ class Formatter:
 				print "Trying next alternate..."
 	
 	def mergeProperties( self, property, format ):
-		if property.merge_property is None:
+		if property.merged_property is None:
 			return
-		for p in property.merge_property:
-			self.getPropertyValues( p, format )
+		for p in property.merged_property:
+			self.getPropertyValues( p, format, property )
 	
 		
 			

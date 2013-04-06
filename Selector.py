@@ -134,7 +134,7 @@ class Selector:
 								merge_prop = self.fresnel.fresnel_graph.value( subject = desc, predicate=fresnel_ns['mergeProperties'] )
 								if merge_prop:
 									merge_prop = collection.Collection( self.fresnel.fresnel_graph , merge_prop )
-									new_p = Property( subject = new_resource, merge_property = merge_prop )
+									new_p = Property( subject = new_resource, merged_property = merge_prop )
 								else:
 									print "in lens ", lens
 									raise Exception("No property mentioned in lens" )

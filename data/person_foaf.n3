@@ -14,7 +14,12 @@
            fresnel:purpose fresnel:defaultLens ;
            fresnel:group :foafGroup ;
            fresnel:showProperties ( 
-	   			    dbpedia-owl:thumbnail
+	   			    [ rdf:type fresnel:PropertyDescription ;
+				      fresnel:alternateProperties( dbpedia-owl:thumbnail
+				      				foaf:depiction
+							) ;
+				      fresnel:use :thumbnailFormat ]
+
 	   			    rdfs:comment
 				    [ rdf:type fresnel:PropertyDescription ;
 				      fresnel:alternateProperties(
