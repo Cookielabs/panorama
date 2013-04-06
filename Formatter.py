@@ -47,7 +47,19 @@ class Formatter:
 			return None
 
 		#otherwise
-		formats = self.fresnel.getPropertyFormat( property.property )
+		if isinstance( property, URIRef ):
+			p = property
+		else:
+			if property.property:
+				p = property.property
+			elif property.alternate_property:
+				p = property.alternate_property[0]
+			elif property.merge_property:
+				p = property.merge_property[0]
+			else:
+				raise("This shouldnt happen")
+	
+		formats = self.fresnel.getPropertyFormat( p )
                 if len( formats ) > 1:
                         raise Exception("AAHHHHH!! More than one format for a property")
                 if len( formats ) > 0:
@@ -68,9 +80,9 @@ class Formatter:
 				for sub_resource in property.property_set:
 					self.matchFormat( sub_resource )
 			elif isinstance( property, Property ):
-				format = self.resolveFormat( property)
-				self.applyPropertyFormat( property, format )
+				format = self.resolveFormat( property )
 				print "format", property.property, format
+				self.applyPropertyFormat( property, format )
 			else:
 				raise Exception("THIS SHOULDNT HAPPEN")
 	
@@ -127,13 +139,44 @@ class Formatter:
 			if label == fresnel_ns['none']:
 				 label = None
 		else:
-			label = self.resolvePropertyLabel( property.property )
+			if property.property:
+				print "for property ", property.property
+				label = self.resolvePropertyLabel( property.property )
+			else:
+				raise Exception("Oops! Now What?")
 		property.setLabel(label)
 
-		value_type = self.fresnel.fresnel_graph.value( subject=format, predicate=fresnel_ns['value'] )
-		values = self.rdf_graph.objects( subject=property.for_subject.uri, predicate=property.property )
+		self.getValues( property, format )
+		self.applyPropertyStyles( property, format )
 
-		print "Getting values for ", property.property, "..."
+		value_formats = self.fresnel.fresnel_graph.objects( subject=format, predicate=fresnel_ns['valueFormat'] )
+
+		for f in value_formats:
+			for p, o in self.fresnel.fresnel_graph.predicate_objects( subject=f ):
+				property.value_format[ p ] = o
+
+		property_formats = self.fresnel.fresnel_graph.objects( subject=format, predicate=fresnel_ns['propertyFormat'] )
+
+		for f in property_formats:
+			for p, o in self.fresnel.fresnel_graph.predicate_objects( subject=f ):
+				property.property_format[ p ] = o
+	 
+	
+	def getValues( self, property, format ):
+		if property.property:
+			self.getPropertyValues( property.property, format, property )
+		elif property.alternate_property:
+			self.alternateProperties( property, format )
+		elif property.merge_property:
+			self.mergeProperties( property, format )
+		else:
+			raise Exception("Property not found..")
+
+	def getPropertyValues( self, property, format, property_class ):	
+		print "Getting values for ", property, "..."
+		value_type = self.fresnel.fresnel_graph.value( subject=format, predicate=fresnel_ns['value'] )
+		values = self.rdf_graph.objects( subject=property_class.for_subject.uri, predicate=property )
+		flag = False
 		for value in values:
 			string = ""
 			if value_type is not None:
@@ -150,27 +193,34 @@ class Formatter:
 					if value.language:
 						if value.language != "en":
 							continue
-					string = value
+						string = value
 				else:
 					string = self.resolveValueLabel( value )
 			print string
 			if string:
-				property.addValue(string )
-		self.applyPropertyStyles( property, format )
+				flag = True
+				property_class.addValue( string )
+		return flag
 
-		value_formats = self.fresnel.fresnel_graph.objects( subject=format, predicate=fresnel_ns['valueFormat'] )
-
-		for f in value_formats:
-			for p, o in self.fresnel.fresnel_graph.predicate_objects( subject=f ):
-				property.value_format[ p ] = o
-
-		property_formats = self.fresnel.fresnel_graph.objects( subject=format, predicate=fresnel_ns['propertyFormat'] )
-
-		for f in property_formats:
-			for p, o in self.fresnel.fresnel_graph.predicate_objects( subject=f ):
-				property.property_format[ p ] = o
-	 	
-
+	def alternateProperties( self, property, format ):
+		if property.alternate_property is None:
+			return
+		flag = False
+		for p in property.alternate_property:
+			flag = self.getPropertyValues( p , format , property)
+			if flag:
+				break
+			else:
+				print "Trying next alternate..."
+	
+	def mergeProperties( self, property, format ):
+		if property.merge_property is None:
+			return
+		for p in property.merge_property:
+			self.getPropertyValues( p, format )
+	
+		
+			
 	def resolvePropertyLabel( self, property ):
 		print "Resolving label for property ", property
 		if property in self.property_label:

@@ -1,4 +1,5 @@
 from rdflib import *
+from rdflib import collection
 from Namespaces import *
 from Result import *
 from LensMatch import *
@@ -120,10 +121,26 @@ class Selector:
 				else:
 					if isinstance( property, BNode ):
 						desc = property
+						#TODO: clean up the code
 						property = self.fresnel.fresnel_graph.value( subject=desc, predicate=fresnel_ns['property'] )
-						new_p = Property( property, new_resource )
+						if property:
+							new_p = Property( subject = new_resource, property = property )
+						else:
+							alt_prop = self.fresnel.fresnel_graph.value( subject=desc, predicate=fresnel_ns['alternateProperties'] )
+							if alt_prop:
+								alt_prop = collection.Collection( self.fresnel.fresnel_graph, alt_prop )
+								new_p = Property( subject = new_resource, alternate_property = alt_prop )
+							else:
+								merge_prop = self.fresnel.fresnel_graph.value( subject = desc, predicate=fresnel_ns['mergeProperties'] )
+								if merge_prop:
+									merge_prop = collection.Collection( self.fresnel.fresnel_graph , merge_prop )
+									new_p = Property( subject = new_resource, merge_property = merge_prop )
+								else:
+									print "in lens ", lens
+									raise Exception("No property mentioned in lens" )
+
 						new_p.setPropertyDescription( desc )
 					else:
-						new_p = Property( property , new_resource )
+						new_p = Property( subject = new_resource, property = property )
 					new_resource.addProperty( new_p )
 			self.result.append( new_resource )

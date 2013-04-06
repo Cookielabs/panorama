@@ -5,6 +5,7 @@
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 @prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
 @prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix dbpprop:  <http://dbpedia.org/property/> .
 @prefix :         <#>.
 
 
@@ -15,12 +16,25 @@
            fresnel:showProperties ( 
 	   			    dbpedia-owl:thumbnail
 	   			    rdfs:comment
-				    dbpedia-owl:birthName 
+				    [ rdf:type fresnel:PropertyDescription ;
+				      fresnel:alternateProperties(
+				      					dbpedia-owl:birthName
+				      					foaf:name
+									dbpprop:name
+									rdfs:label 
+								 )
+				     ]
                                     dbpedia-owl:birthDate
 				    dbpedia-owl:deathDate
                                     dbpedia-owl:nationality
 				    dbpedia-owl:religion
-				    dbpedia-owl:occupation
+				    [ rdf:type fresnel:PropertyDescription ;
+				      fresnel:alternateProperties ( 
+				      			dbpedia-owl:occupation
+							dbpedia-owl:profession
+							) ;
+				      fresnel:use :occupationFormat 
+				    ]
 				    dbpedia-owl:spouse
 				    dbpedia-owl:knownFor
 				    [ rdf:type fresnel:PropertyDescription ;
@@ -66,8 +80,17 @@
 
 :nameFormat rdf:type fresnel:Format ;
 		fresnel:propertyFormatDomain dbpedia-owl:birthName ;
-		fresnel:label "Name"^^xsd:string .
+		fresnel:label "Name"^^xsd:string ;
+		fresnel:valueFormat [ fresnel:contentAfter ", &nbsp"^^xsd:string ;
+	   			      fresnel:contentLast " "^^xsd:string ;
+				 ] .
 
+:occupationFormat rdf:type fresnel:Format ;
+		fresnel:propertyFormatDomain dbpedia-owl:occupation ;
+		fresnel:label "Occupation"^^xsd:string ;
+		fresnel:valueFormat [ fresnel:contentAfter ", &nbsp"^^xsd:string ;
+	   			      fresnel:contentLast " "^^xsd:string ;
+				 ] .
 :residenceFormat rdf:type fresnel:Format ;
 		fresnel:propertyFormatDomain dbpedia-owl:residence ;
 		fresnel:label "Residence"^^xsd:string.

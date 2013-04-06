@@ -75,8 +75,10 @@ class Resource:
 
 class Property:
 
-	def __init__( self,  property, subject ):
+	def __init__( self,  subject, property = None, alternate_property = None, merged_property = None ):
 		self.property = property
+		self.alternate_property = alternate_property
+		self.merged_property = merged_property
 		self.for_subject = subject
 		self.values = []
 		self.desc = None

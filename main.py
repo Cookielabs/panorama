@@ -11,10 +11,10 @@ def main():
 	print "Created Fresnel Graph.."
 	rdf_graph = Graph()
 	print "Downloading resource.."
-	f = open('data/Tim_Berners-Lee.rdf')
-	rdf_graph.parse( file=f, format="xml")
+	#f = open('data/Tim_Berners-Lee.rdf')
+	#rdf_graph.parse( file=f, format="xml")
 	#rdf_graph.parse(source="http://dbpedia.org/page/A._P._J._Abdul_Kalam")
-	print "more..."
+	#print "more..."
 	
 	f = open('data/A._P._J._Abdul_Kalam.rdf')
 	rdf_graph.parse( file=f, format="xml")
