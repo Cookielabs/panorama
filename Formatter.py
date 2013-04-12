@@ -201,6 +201,8 @@ class Formatter:
 						if value.language != "en":
 							continue
 						string = value
+					else:
+						string = value
 				else:
 					string = self.resolveValueLabel( value )
 			print string

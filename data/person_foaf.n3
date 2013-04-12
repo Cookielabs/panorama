@@ -29,7 +29,12 @@
 									rdfs:label 
 								 )
 				     ]
-                                    dbpedia-owl:birthDate
+                                    [ rdf:type fresnel:PropertyDescription ;
+				      fresnel:alternateProperties(
+				      					dbpedia-owl:birthDate
+									dbpprop:birthDate
+								)
+				    ]
 				    dbpedia-owl:deathDate
                                     dbpedia-owl:nationality
 				    dbpedia-owl:religion

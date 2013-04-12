@@ -1,4 +1,3 @@
-
 #resource
 {
 	width: 600px;
@@ -17,19 +16,31 @@ label
 {
 	float: left;
 	color: red;
-	padding: 5px;
+	width: auto;
+	padding-right: 5px;
 }
 
 #value
 {
 	display: block;
-	padding: 5px;
 	color:black;
+	height:auto;
 }
 
+.thumbnail
+{
+	margin: auto;
+	border-style: solid;
+	border-width: medium;
+	border-color: green;
+}
 
 .thumbnail img
 {
+	margin:  auto;
+	border-style: solid;
+	border-width: medium;
+	border-color: red;
 	max-width:200px;
 	max-height:200px;
 }
