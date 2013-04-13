@@ -50,12 +50,12 @@
 				    [ rdf:type fresnel:PropertyDescription ;
 				      fresnel:property dbpedia-owl:residence ;
 		    		      fresnel:use :residenceFormat ]
-				    dbpedia-owl:wikiPageExternalLink
+				   # dbpedia-owl:wikiPageExternalLink
 				    ).
 
 :foafPersonDefaultLens rdf:type fresnel:Lens ;
                        fresnel:classLensDomain foaf:Person ;
-                       fresnel:group :foafGroup ;
+		       fresnel:group :foafGroup ;
                        fresnel:showProperties ( foaf:name
                                                 foaf:surname
                                                 foaf:depiction ) .

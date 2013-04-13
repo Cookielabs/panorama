@@ -13,6 +13,7 @@ class Formatter:
 		self.rdf_graph = selector.rdf_graph
 		self.result = selector.result
 		self.property_label = {} # for caching data
+		self.value_label = {}
 
 	def resolveFormat( self, property ):
 		
@@ -267,6 +268,8 @@ class Formatter:
 			return label
 		#if is not BNode then try getting from outside source
 		if isinstance( resource, URIRef ):
+			if resource in self.value_label:
+				return self.value_label[resource]
 			print "downloading...", resource
 			new_graph = Graph()
 			new_graph.load(resource)
@@ -295,6 +298,7 @@ class Formatter:
 			if property is not None:
 				value = new_graph.value(subject=resource, predicate=property )
 				if value:
+					self.value_label[resource] = value
 					return value
 
 			#check for default label ie rdfs:label
@@ -304,6 +308,7 @@ class Formatter:
                                 	if label.language != "en":
 						continue
 				new_graph.close()
+				self.value_label[resource] = label
                         	return label
 
 	def format( self ):

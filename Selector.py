@@ -60,6 +60,7 @@ class Selector:
 				if len(d) == 1:
 					return d.pop()
 				else:
+					print "Lens in conflict...", instance_lens, default_lens, d
 					raise Exception("Unresolvable Lens conflict")
 		elif len( class_lens ) > 0:
 			if len( class_lens ) == 1:
@@ -70,6 +71,8 @@ class Selector:
 				if len(d) == 1:
 					return d.pop()
 				else:
+					print resource, "Lens in conflict...", class_lens, default_lens, d
+					return class_lens.pop()
 					raise Exception("Unresolvable Lens conflict")
 		raise Exception("Unresolvable Lens conflict...no lens found")
 		return None
