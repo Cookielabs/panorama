@@ -1,5 +1,6 @@
 from Result import *
 from rdflib import *
+from Database import *
 
 #TODO:
 #Add support for styling
@@ -12,8 +13,7 @@ class Formatter:
 		self.fresnel = selector.fresnel
 		self.rdf_graph = selector.rdf_graph
 		self.result = selector.result
-		self.property_label = {} # for caching data
-		self.value_label = {}
+		self.database = Database()
 
 	def resolveFormat( self, property ):
 		
@@ -233,8 +233,10 @@ class Formatter:
 			
 	def resolvePropertyLabel( self, property ):
 		print "Resolving label for property ", property
-		if property in self.property_label:
-			return self.property_label[property]
+		
+		p_db = self.database.getPropertyLabel( str(property) )
+		if p_db:
+			return p_db
 		new_graph = Graph()
 		new_graph.load( property )
 		labels = new_graph.objects( subject=property, predicate=rdfs_ns['label'] )
@@ -243,7 +245,7 @@ class Formatter:
 				if label.language != "en":
 					continue
 			new_graph.close()
-			self.property_label[property] = label
+			self.database.addPropertyLabel( str(property), label )
 			return label
 		return None
 
@@ -268,8 +270,9 @@ class Formatter:
 			return label
 		#if is not BNode then try getting from outside source
 		if isinstance( resource, URIRef ):
-			if resource in self.value_label:
-				return self.value_label[resource]
+			r_db = self.database.getResourceLabel( str(resource) )
+			if r_db:
+				return r_db
 			print "downloading...", resource
 			new_graph = Graph()
 			new_graph.load(resource)
@@ -298,18 +301,19 @@ class Formatter:
 			if property is not None:
 				value = new_graph.value(subject=resource, predicate=property )
 				if value:
-					self.value_label[resource] = value
+					self.database.addResourceLabel( str(resource), value )
 					return value
 
 			#check for default label ie rdfs:label
 			labels = new_graph.objects( subject=resource, predicate=rdfs_ns['label'] )
-		        for label in labels:
+			print "labels found..", labels
+			for label in labels:
                        		if label.language:
                                 	if label.language != "en":
 						continue
 				new_graph.close()
-				self.value_label[resource] = label
-                        	return label
+                        	self.database.addResourceLabel( str(resource), label )
+				return label
 
 	def format( self ):
 
