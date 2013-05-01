@@ -37,8 +37,8 @@ class Resource:
 		self.lens = lens
 		self.property_set = []
 		self.resource_styles = None
-
 		self.property_format = None
+		self.label = None
 
 	def setLens( self, lens ):
 		self.lens = lens
@@ -53,7 +53,8 @@ class Resource:
 		self.property_set.append( property )
 	
 	def render( self ):
-		string ="<div id='resource' " + renderStyle( self.resource_styles ) +">\n"
+		string = "<h3>"+str(self.label)+"</h3>\n"
+		string +="<div id='resource' " + renderStyle( self.resource_styles ) +">\n"
 		for property in self.property_set:
 
 			if self.property_set.index( property ) == 0:

@@ -80,7 +80,8 @@
 
 :abstractFormat rdf:type fresnel:Format ;
 		fresnel:propertyFormatDomain rdfs:comment ;
-		fresnel:label fresnel:none .
+		fresnel:label fresnel:none ;
+		fresnel:valueStyle "comment more"^^fresnel:styleClass .
 
 :thumbnailFormat rdf:type fresnel:Format ;
               fresnel:propertyFormatDomain dbpedia-owl:thumbnail ;

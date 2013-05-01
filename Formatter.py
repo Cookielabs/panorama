@@ -91,7 +91,6 @@ class Formatter:
 
 		if format is None:
 			return
-		
 		resource_styles = list(self.fresnel.fresnel_graph.objects( subject=format, predicate=fresnel_ns['resourceStyle'] ) )
 
 		resource.setResourceStyle( resource_styles )
@@ -99,9 +98,15 @@ class Formatter:
 	
 	def applyResourceFormat( self, resource, format ):
 
+		print "Applying resource format.."	
+		resource.label = self.resolveValueLabel( resource.uri )
+		if resource.label is None:
+			resource.label = "No Label"
+		print resource.uri, resource.label
+		
 		if format is None:
 			return
-
+		
 		#TODO
 
 	def applyPropertyStyles( self, property, format ):
