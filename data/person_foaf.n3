@@ -130,6 +130,10 @@
 				      fresnel:contentLast " "^^xsd:string ;
 				      ].
 
+:elevationFormat rdf:type fresnel:Format ;
+		fresnel:propertyFormatDomain dbpedia-owl:elevation;
+		frsenel:label "Elevation".
+
 :populationFormat rdf:type fresnel:Format ;
 		fresnel:propertyFormatDomain dbpprop:populationCensus;
 		fresnel:propertyFormatDomain dbpedia-owl:populationMetro;
