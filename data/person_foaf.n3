@@ -38,6 +38,7 @@
 				    dbpedia-owl:deathDate
                                     dbpedia-owl:nationality
 				    dbpedia-owl:religion
+				    dbpedia-owl:birthPlace
 				    [ rdf:type fresnel:PropertyDescription ;
 				      fresnel:alternateProperties ( 
 				      			dbpedia-owl:occupation
@@ -60,23 +61,79 @@
                                                 foaf:surname
                                                 foaf:depiction ) .
 
-:knowsLens rdf:type fresnel:Lens ;
-           fresnel:classLensDomain foaf:Person ;
-           fresnel:group :foafGroup ;
-           fresnel:showProperties ( foaf:name
-                                    foaf:surname
-                                    foaf:mbox
-				    [ rdf:type fresnel:PropertyDescription ;
-				      fresnel:property foaf:knows;
-				      fresnel:use :mailFormat ] ).
 :nameLens rdf:type fresnel:Lens ;
 	fresnel:purpose fresnel:labelLens;
 	fresnel:classLensDomain foaf:Person ;
 	fresnel:showProperties foaf:name .
 
+
+#
+# COUNTRY LENS
+#
+
+:countryLens rdf:type fresnel:Lens ;
+	fresnel:classLensDomain dbpedia-owl:Country;
+	fresnel:purpose fresnel:defaultLens ;
+	fresnel:showProperties( 
+	   			    [ rdf:type fresnel:PropertyDescription ;
+				      fresnel:alternateProperties( dbpedia-owl:thumbnail
+				      				foaf:depiction
+							) ;
+				      fresnel:use :thumbnailFormat ]
+	   			    rdfs:comment
+				    dbpedia-owl:capital
+				    dbpedia-owl:currency
+				    dbpprop:populationCensus	
+				    dbpedia-owl:anthem
+				    dbpedia-owl:regionalLanguage
+				    dbpprop:nationalMotto
+				    dbpedia-owl:leaderName
+				    dbpprop:areaRank	
+				    dbpprop:callingCode	
+				    dbpprop:timeZone	
+				    ).
+
+#
+# CITY LENS
+#
+
+:cityLens rdf:type fresnel:Lens ;
+	fresnel:classLensDomain dbpedia-owl:City;
+	fresnel:purpose fresnel:defaultLens ;
+	fresnel:showProperties( 
+	   			    [ rdf:type fresnel:PropertyDescription ;
+				      fresnel:alternateProperties( dbpedia-owl:thumbnail
+				      				foaf:depiction
+							) ;
+				      fresnel:use :thumbnailFormat ]
+	   			    rdfs:comment
+				    dbpedia-owl:populationMetro	
+				    dbpedia-owl:country	
+				    dbpedia-owl:elevation	
+				    dbpedia-owl:isPartOf	
+				    dbpedia-owl:timeZone	
+				    dbpedia-owl:leaderName	
+				    dbpedia-owl:governingBody	
+				    dbpedia-owl:areaCode	
+				    dbpedia-owl:postalCode	
+				).
+
 # -----------------------------------------------
 # 2. Fresnel Formats
 # -----------------------------------------------
+
+
+:areaFormat rdf:type fresnel:Format ;
+		fresnel:propertyFormatDomain dbpedia-owl:areaMetro;
+		fresnel:label "Area";
+		fresnel:valueFormat [ fresnel:contentAfter ","^^xsd:string ;
+				      fresnel:contentLast " "^^xsd:string ;
+				      ].
+
+:populationFormat rdf:type fresnel:Format ;
+		fresnel:propertyFormatDomain dbpprop:populationCensus;
+		fresnel:propertyFormatDomain dbpedia-owl:populationMetro;
+		fresnel:label "Population".
 
 :abstractFormat rdf:type fresnel:Format ;
 		fresnel:propertyFormatDomain rdfs:comment ;

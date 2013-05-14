@@ -211,7 +211,7 @@ class Formatter:
 						string = value
 				else:
 					string = self.resolveValueLabel( value )
-			print string
+			print "value ", string
 			if string:
 				flag = True
 				property_class.addValue( string )
@@ -255,19 +255,31 @@ class Formatter:
 		return None
 
 	def resolveValueLabel( self, resource ):
+		print "resolve resource label"
 		if resource in self.selector.lens_for_resource:
 			label_lens = self.selector.lens_for_resource[resource].getLabelLens()
 			#TODO: resolve conflict for multiple label lens
-			label_len = label_lens.pop()
-			property = self.fresnel.fresnel_graph.value( subject=label_len, predicate=fresnel_ns['showProperties'] )
-			if property is None:
-				raise Exception("No property specified for label lens")
-			value = self.rdf_graph.value( subject=resource, predicate=property )
-			if value:
-				return value
+			if len(label_lens) > 0:
+				label_len = label_lens.pop()
+				property = self.fresnel.fresnel_graph.value( subject=label_len, predicate=fresnel_ns['showProperties'] )
+				if property is None:
+					raise Exception("No property specified for label lens")
+				value = self.rdf_graph.value( subject=resource, predicate=property )
+				if value:
+					return value
 
+		
+		r_db = self.database.getResourceLabel( str(resource) )
+		print "in DB", r_db
+		if r_db:
+			return r_db
 		#check if rdf label exists inside the current graph
 		labels = self.rdf_graph.objects( subject=resource, predicate=rdfs_ns['label'] )
+		labels = list( labels )
+		l = self.rdf_graph.objects( subject=resource, predicate=rdf_ns['label'] )
+		l = list( l )
+		labels.extend( l )
+		print "labels in current Graph", labels
 		for label in labels:
 			if label.language:
 				if label.language != "en":
@@ -275,13 +287,11 @@ class Formatter:
 			return label
 		#if is not BNode then try getting from outside source
 		if isinstance( resource, URIRef ):
-			r_db = self.database.getResourceLabel( str(resource) )
-			if r_db:
-				return r_db
-			print "downloading...", resource
+			print "downloading resource...", resource
 			new_graph = Graph()
 			new_graph.load(resource)
 			print "done"
+			'''
 			#check if any labelLens match the resource
 			labelLens = self.fresnel.getLabelLens()
 			types = list( new_graph.objects( subject=resource, predicate=rdf_ns['type'] ) )
@@ -302,22 +312,28 @@ class Formatter:
 						property = self.fresnel.fresnel_graph.value( subject=lens, predicate=fresnel_ns['showProperties'] )
 						break
 				if property is not None:
-					break
-			if property is not None:
-				value = new_graph.value(subject=resource, predicate=property )
-				if value:
-					self.database.addResourceLabel( str(resource), value )
-					return value
-
+					value = new_graph.value(subject=resource, predicate=property )
+					if value:
+						self.database.addResourceLabel( str(resource), value )
+						return value
+			'''
 			#check for default label ie rdfs:label
 			labels = new_graph.objects( subject=resource, predicate=rdfs_ns['label'] )
+			labels = list( labels )
+			l = self.rdf_graph.objects( subject=resource, predicate=rdf_ns['label'] )
+			l = list( l )
+			labels.extend( l )
 			print "labels found..", labels
 			for label in labels:
+				print "In loop"
                        		if label.language:
                                 	if label.language != "en":
+						print "skipping..", label
 						continue
+				print "found one label"
 				new_graph.close()
                         	self.database.addResourceLabel( str(resource), label )
+				print "seleceted label ", label
 				return label
 
 	def format( self ):
